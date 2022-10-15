@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/IA Sol.unity
+    guid: d9113bf2b77652940984b582dffdacdd
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 8642eca32b1d6324bb637b3d35ed5d80
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: bd83f0fec26b9c8448be3b26080d0c5d
   m_configObjects: {}
