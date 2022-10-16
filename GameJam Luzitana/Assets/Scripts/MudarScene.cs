@@ -5,7 +5,7 @@ using UnityEngine;
 public class MudarScene : MonoBehaviour
 {
     public string nome;
-    void Start()
+     void Start()
     {
         
     }
