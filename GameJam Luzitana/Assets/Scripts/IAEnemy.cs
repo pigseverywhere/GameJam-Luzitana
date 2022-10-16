@@ -29,10 +29,10 @@ public class IAEnemy : MonoBehaviour
 
     void Start()
     {
-        state = STATE.O;
+        state = STATE.N;
 
-        
-
+        ChangeChoise();
+        Debug.Log(state);
     }
 
     
@@ -108,19 +108,19 @@ public class IAEnemy : MonoBehaviour
         switch(state)
         {
             case STATE.N:
-                movimento += new Vector3(0, 0, 5 * deltaTime);
-                transform.position = movimento;
-                break;
-            case STATE.S:
                 movimento -= new Vector3(0, 0, 5 * deltaTime);
                 transform.position = movimento;
                 break;
+            case STATE.S:
+                movimento += new Vector3(0, 0, 5 * deltaTime);
+                transform.position = movimento;
+                break;
             case STATE.L:
-                movimento += new Vector3(5 * deltaTime, 0, 0);
+                movimento -= new Vector3(5 * deltaTime, 0, 0);
                 transform.position = movimento;
                 break;
             case STATE.O:
-                movimento -= new Vector3(5 * deltaTime, 0, 0);
+                movimento += new Vector3(5 * deltaTime, 0, 0);
                 transform.position = movimento;
                 break;
 
@@ -133,7 +133,7 @@ public class IAEnemy : MonoBehaviour
         
         if (other.tag.Equals("static"))
         {
-            Debug.Log("entrou");
+           
             for (int i = 0; i < objects.Length; i++)
             {
 
@@ -148,7 +148,6 @@ public class IAEnemy : MonoBehaviour
 
         }
     }
-
 
 
 }
