@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - static
+  - inimigo
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 
@@ -27,6 +28,10 @@ public class IAEnemy : MonoBehaviour
     public ObjectStatic[] script;
     public GameObject[] objects;
 
+    public GameObject colider;
+    public TextMeshProUGUI timer;
+    public int []AumentoDoColider;
+
     void Start()
     {
         state = STATE.N;
@@ -47,7 +52,22 @@ public class IAEnemy : MonoBehaviour
 
         UpdateChoise(Time.deltaTime);
 
-
+        int tempo = int.Parse(timer.text);
+        if(tempo < AumentoDoColider[0])
+        {
+            colider.GetComponent<BoxCollider>().size = new Vector3(2f,2f,2f);
+            colider.GetComponent<Light>().range = 4;
+        }
+        if (tempo < AumentoDoColider[1])
+        {
+            colider.GetComponent<BoxCollider>().size = new Vector3(3f, 3f, 3f);
+            colider.GetComponent<Light>().range = 5;
+        }
+        if (tempo < AumentoDoColider[1])
+        {
+            colider.GetComponent<BoxCollider>().size = new Vector3(4f, 4f, 4f);
+            colider.GetComponent<Light>().range = 6;
+        }
     }
 
     public void ChangeChoise()
@@ -147,6 +167,9 @@ public class IAEnemy : MonoBehaviour
             }
 
         }
+
+
+
     }
 
 
